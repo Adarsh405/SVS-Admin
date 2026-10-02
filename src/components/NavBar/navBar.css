@@ -1,0 +1,1025 @@
+/* =========================================================
+   SVS JEWELLERY
+   LUXURY SHOWROOM NAVBAR
+   Existing class names preserved
+========================================================= */
+
+:root {
+  --nav-gold: #c49a3a;
+  --nav-gold-light: #f2d98b;
+  --nav-gold-dark: #8b681d;
+
+  --nav-cream: #fffdf8;
+  --nav-ivory: #fffaf0;
+
+  --nav-text: #332b1d;
+  --nav-muted: #716a5d;
+
+  --nav-border: rgba(190, 145, 45, 0.22);
+
+  --nav-shadow:
+    0 8px 28px rgba(91, 67, 20, 0.08);
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: relative;
+
+  width: 100%;
+  height: 72px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 26px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fffefa 48%,
+      #fffaf0 100%
+    );
+
+  border-bottom:
+    1px solid var(--nav-border);
+
+  box-shadow:
+    0 5px 22px rgba(78, 57, 17, 0.07),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.95);
+
+  z-index: 1000;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SUBTLE TOP GOLD LINE
+========================================================= */
+
+.navbar::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      #b88924 15%,
+      #f4d98a 35%,
+      #c79b38 50%,
+      #f4d98a 65%,
+      #b88924 85%,
+      transparent 100%
+    );
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   SOFT LIGHT EFFECT
+========================================================= */
+
+.navbar::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -25%;
+
+  width: 18%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.65),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  pointer-events: none;
+
+  animation:
+    navbarShine 9s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+  position: relative;
+
+  z-index: 5;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  color: var(--nav-gold-dark);
+
+  font-size: 21px;
+  font-weight: 800;
+
+  letter-spacing: 0.2px;
+
+  text-decoration: none;
+
+  margin-right: 30px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.brand:hover {
+  color: #76540d;
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
+
+.brand span {
+  position: relative;
+
+  display: inline-block;
+
+  background:
+    linear-gradient(
+      100deg,
+      #76550d 0%,
+      #b98a28 25%,
+      #e2c363 45%,
+      #a87818 65%,
+      #79570f 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  background-size: 180% auto;
+
+  animation:
+    brandGoldFlow 7s ease-in-out infinite;
+}
+
+
+/* Small luxury underline */
+
+.brand span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -4px;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #c49a3a,
+      transparent
+    );
+
+  opacity: 0.55;
+
+  transform:
+    scaleX(0.65);
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+.brand:hover span::after {
+  transform:
+    scaleX(1);
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.svs-logo {
+  width: 46px !important;
+  height: 46px !important;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border:
+    1.5px solid #c49a3a;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #ffffff,
+      #fff9e8 65%,
+      #f8edcc
+    );
+
+  box-shadow:
+    0 3px 12px rgba(157, 116, 28, 0.13),
+    0 0 0 3px rgba(196, 154, 58, 0.05);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.brand:hover .svs-logo {
+  transform:
+    scale(1.05);
+
+  box-shadow:
+    0 5px 17px rgba(157, 116, 28, 0.22),
+    0 0 0 4px rgba(196, 154, 58, 0.07);
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+}
+
+
+.nav-links a {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 10px 13px;
+
+  color: var(--nav-muted);
+
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   NAV ICON
+========================================================= */
+
+.nav-links a svg {
+  font-size: 16px;
+
+  flex-shrink: 0;
+
+  color: #8d8069;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* =========================================================
+   LINK HOVER
+========================================================= */
+
+.nav-links a:hover {
+  color: #8b6517;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 250, 233, 0.95),
+      rgba(255, 246, 218, 0.7)
+    );
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 5px 14px rgba(152, 111, 29, 0.07);
+}
+
+
+.nav-links a:hover svg {
+  color: #b38426;
+
+  transform:
+    translateY(-1px)
+    scale(1.06);
+}
+
+
+/* =========================================================
+   HOVER GOLD LINE
+========================================================= */
+
+.nav-links a::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 3px;
+
+  width: 0;
+  height: 1.5px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #c49a3a,
+      transparent
+    );
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    width 0.28s ease;
+}
+
+
+.nav-links a:hover::before {
+  width: 50%;
+}
+
+
+/* =========================================================
+   ACTIVE LINK
+========================================================= */
+
+.nav-links a.active {
+  color: #79570f;
+
+  font-weight: 800;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff9e7,
+      #fff4d3
+    );
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(196, 154, 58, 0.17),
+
+    0 5px 15px
+    rgba(153, 111, 25, 0.07);
+}
+
+
+.nav-links a.active svg {
+  color: #b4872b;
+}
+
+
+/* =========================================================
+   ACTIVE GOLD LINE
+========================================================= */
+
+.nav-links a.active::before {
+  width: 50%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #b9892b,
+      #e3c56d,
+      #b9892b,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+.admin {
+  position: relative;
+
+  z-index: 5;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 5px 9px;
+
+  color: #403a30;
+
+  text-decoration: none;
+
+  border-radius: 12px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.admin:hover {
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf7,
+      #fff8e7
+    );
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 6px 16px rgba(142, 103, 24, 0.07);
+}
+
+
+/* =========================================================
+   ADMIN IMAGE WRAPPER
+========================================================= */
+
+.admin-image-wrapper {
+  position: relative;
+
+  width: 41px;
+  height: 41px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ADMIN IMAGE
+========================================================= */
+
+.admin-image {
+  width: 41px;
+  height: 41px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border:
+    1.5px solid #c49a3a;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 3px 12px rgba(144, 105, 26, 0.13);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.admin:hover .admin-image {
+  transform:
+    scale(1.04);
+
+  box-shadow:
+    0 5px 16px rgba(144, 105, 26, 0.2);
+}
+
+
+/* =========================================================
+   ONLINE INDICATOR
+========================================================= */
+
+.admin-online {
+  position: absolute;
+
+  right: -1px;
+  bottom: 0;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #28a745;
+
+  border:
+    2px solid #ffffff;
+
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.12);
+
+  animation:
+    onlinePulse 2.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ADMIN TEXT
+========================================================= */
+
+.admin-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1px;
+}
+
+
+.admin-name {
+  font-size: 13px;
+
+  font-weight: 800;
+
+  color: #3d382f;
+
+  line-height: 1.2;
+}
+
+
+.admin-role {
+  font-size: 10px;
+
+  color: #9a9181;
+
+  letter-spacing: 0.25px;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   MOBILE BUTTON
+========================================================= */
+
+.menu-button {
+  display: none;
+
+  margin-left: 8px;
+
+  width: 41px;
+  height: 41px;
+
+  border:
+    1px solid rgba(196, 154, 58, 0.22);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf8,
+      #fff6df
+    );
+
+  color: #8a6518;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.menu-button:hover {
+  transform:
+    translateY(-1px);
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff9e9,
+      #ffefc5
+    );
+
+  box-shadow:
+    0 6px 16px rgba(151, 110, 25, 0.12);
+}
+
+
+.menu-button:active {
+  transform:
+    scale(0.94);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes navbarShine {
+
+  0% {
+    left: -25%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  35% {
+    left: 115%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 115%;
+    opacity: 0;
+  }
+}
+
+
+@keyframes brandGoldFlow {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+}
+
+
+@keyframes onlinePulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(40, 167, 69, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 5px rgba(40, 167, 69, 0);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 1100px) {
+
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .brand {
+    margin-right: 15px;
+  }
+
+  .brand span {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    gap: 2px;
+  }
+
+  .nav-links a {
+    padding: 9px 8px;
+
+    font-size: 12px;
+
+    gap: 5px;
+  }
+
+  .nav-links a svg {
+    font-size: 14px;
+  }
+
+  .admin-info {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 800px) {
+
+  .navbar {
+    height: 64px;
+
+    padding: 0 12px;
+  }
+
+  .brand {
+    margin-right: auto;
+  }
+
+  .brand span {
+    font-size: 17px;
+  }
+
+  .svs-logo {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .admin {
+    margin-left: auto;
+
+    padding: 3px;
+  }
+
+  .admin-image-wrapper,
+  .admin-image {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  /* =======================================================
+     MOBILE MENU
+  ======================================================= */
+
+  .nav-links {
+    position: absolute;
+
+    top: 64px;
+
+    left: 10px;
+    right: 10px;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 4px;
+
+    padding: 9px;
+
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fffdf8 60%,
+        #fff8e9 100%
+      );
+
+    border:
+      1px solid rgba(196, 154, 58, 0.23);
+
+    border-radius: 13px;
+
+    box-shadow:
+      0 18px 40px
+      rgba(70, 51, 14, 0.14);
+
+    animation:
+      mobileMenuAppear 0.25s
+      ease-out;
+  }
+
+
+  .nav-links.mobile-open {
+    display: flex;
+  }
+
+
+  .nav-links a {
+    justify-content: flex-start;
+
+    padding: 12px 14px;
+
+    font-size: 14px;
+  }
+
+
+  .nav-links a.active {
+    background:
+      linear-gradient(
+        90deg,
+        #fff7dd,
+        #fffdf7
+      );
+  }
+
+
+  .nav-links a.active::before {
+    left: 14px;
+    bottom: 5px;
+
+    width: 25px;
+
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  .navbar {
+    height: 60px;
+
+    padding: 0 9px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand span {
+    font-size: 15px;
+  }
+
+  .svs-logo {
+    width: 39px !important;
+    height: 39px !important;
+  }
+
+  .admin-image-wrapper,
+  .admin-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .menu-button {
+    width: 37px;
+    height: 37px;
+
+    font-size: 18px;
+  }
+
+  .nav-links {
+    top: 60px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media screen and (max-width: 360px) {
+
+  .navbar {
+    padding: 0 7px;
+  }
+
+  .brand {
+    gap: 5px;
+  }
+
+  .brand span {
+    font-size: 14px;
+  }
+
+  .svs-logo {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .admin-image-wrapper,
+  .admin-image {
+    width: 33px;
+    height: 33px;
+  }
+
+  .menu-button {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar *,
+  .navbar *::before,
+  .navbar *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE MENU ANIMATION
+========================================================= */
+
+@keyframes mobileMenuAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
