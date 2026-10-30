@@ -2,12 +2,12 @@ import { Component } from "react";
 import { Navigate } from "react-router-dom";
 import "./login.css";
 
-const API_URL = "https://svs-jewellery-backend.onrender.com";
+const API_URL = "https://svs-jewellery-works-backend.onrender.com";
 
 class Login extends Component {
   state = {
-    username: "",
-    password: "",
+    username: "SVS_Jewellers",
+    password: "Svs@1234",
     showPassword: false,
     loading: false,
     checkingAuth: true,
@@ -134,7 +134,7 @@ class Login extends Component {
         password: "",
       });
 
-      window.location.href = "/";
+      window.location.href = "/addJewellery";
 
     } catch (error) {
       console.error("Login error:", error);
@@ -210,6 +210,9 @@ class Login extends Component {
 
           <p className="login-description">
             Welcome back. Sign in to manage your jewellery store.
+          </p>
+          <p className="demo-login-note">
+            Demo credentials are pre-filled for testing.
           </p>
 
           <form onSubmit={this.onSubmitLogin}>
